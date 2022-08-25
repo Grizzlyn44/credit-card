@@ -20,8 +20,12 @@ const CardNumber = (props) => {
   const value = props.value;
   const setCardNumber = props.setCardNumber;
 
+  const classNames = `card-number clickable ${
+    !value && value === "" ? "active" : ""
+  }`;
+
   return (
-    <div className="card-number">
+    <div className={classNames}>
       <div className="heading">Card Number</div>
       <div className="content">
         <input
