@@ -15,8 +15,8 @@ $baseFontFamily: "Quicksand", sans-serif;
 $bgGradient1: #000000;
 $bgGradient2: #292929;
 
-$bgCircleGradient1: #1a6851;
-$bgCircleGradient2: #214043;
+$bgCircleGradient1: #24705a;
+$bgCircleGradient2: #073427;
 
 body {
   background: $bgColor;
@@ -26,7 +26,6 @@ body {
 }
 
 .main-container {
-  //   background: red;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -34,27 +33,50 @@ body {
   align-items: center;
 }
 
-.bg-dot {
-  border-radius: 100%;
-  width: 15rem;
-  height: 15rem;
-  background: red;
-  position: absolute;
-  left: 30%;
-  transform: translateX(-50%);
-  background: linear-gradient(
-    90deg,
-    $bgCircleGradient1 0%,
-    $bgCircleGradient2 100%
-  );
-  &.right {
-    left: 65%;
-    width: 13rem;
-    height: 13em;
+.bg-dot-c {
+  .bg-dot {
+    border-radius: 100%;
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    bottom: -4rem;
+    left: -5rem;
+    background: linear-gradient(
+      90deg,
+      $bgCircleGradient1 0%,
+      $bgCircleGradient2 96%
+    );
+    animation: float 6s ease-in-out infinite;
+    &.right {
+      left: unset;
+      bottom: unset;
+      top: 1rem;
+      right: -3rem;
+      width: 13rem;
+      height: 13em;
+      animation-delay: -2s;
+      animation-duration: 5s;
+    }
+  }
+
+  @keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
+    }
   }
 }
 
 .inner {
+  position: relative;
   //   background: red;
 }
 
