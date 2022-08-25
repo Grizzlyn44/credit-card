@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$bgColor: #070707;
+$textColor: #f0f0f0;
+$baseFontFamily: "Quicksand", sans-serif;
+
+$bgGradient1: #000000;
+$bgGradient2: #292929;
+
+$bgCircleGradient1: #1a6851;
+$bgCircleGradient2: #214043;
+
+body {
+  background: $bgColor;
+  color: $textColor;
+  font-family: $baseFontFamily;
+  background: linear-gradient(90deg, $bgGradient1 0%, $bgGradient2 100%);
+}
+
+.main-container {
+  //   background: red;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-dot {
+  border-radius: 100%;
+  width: 15rem;
+  height: 15rem;
+  background: red;
+  position: absolute;
+  left: 30%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    $bgCircleGradient1 0%,
+    $bgCircleGradient2 100%
+  );
+  &.right {
+    left: 65%;
+    width: 13rem;
+    height: 13em;
+  }
+}
+
+.inner {
+  //   background: red;
+}
+
+.heading-text {
+  //   background: green;
+  width: 16rem;
+  margin: 0 2rem;
+  margin: 0 2rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+.card-container {
+  //   background: #2e2e2e;
+  color: $textColor;
+  height: 18.5rem;
+  width: 30rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  justify-content: space-between;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.1);
+
+  .logo {
+    display: flex;
+    flex-wrap: wrap;
+    width: 3rem;
+    .dot {
+      background: $textColor;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 100%;
+    }
+  }
+
+  .heading {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .content {
+    letter-spacing: -2px;
+    font-family: "Cutive Mono", monospace;
+    font-weight: 600;
+    color: #b4b4b4;
+  }
+
+  .card-number .content {
+    font-size: 2.25rem;
+    display: flex;
+    font-weight: 600;
+    .f-digit {
+      margin-left: 1.25rem;
+      &:nth-of-type(1) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .card-details {
+    display: flex;
+    justify-content: space-between;
+    .content {
+      font-size: 1.15rem;
+    }
+  }
+}
