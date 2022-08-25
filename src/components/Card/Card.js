@@ -1,3 +1,5 @@
+import React from "react";
+
 import Logo from "./Logo";
 import CardNumber from "./CardNumber";
 import CardHolder from "./CardHolder";
@@ -12,11 +14,14 @@ const mockData = {
 };
 
 const Card = () => {
-  const { cardNumber, holderName, expData, ccv } = mockData;
+  const { holderName, expData, ccv } = mockData;
+
+  const [cardNumber, setCardNumber] = React.useState("");
+
   return (
     <div className="card-container">
       <Logo />
-      <CardNumber value={cardNumber} />
+      <CardNumber value={cardNumber} setCardNumber={setCardNumber} />
       <div className="card-details">
         <CardHolder value={holderName} />
         <ExpDate value={expData} />
