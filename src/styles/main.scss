@@ -145,6 +145,7 @@ body {
     margin-bottom: 0.5rem;
     font-weight: 600;
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.75));
+    white-space: pre;
   }
 
   .content {
@@ -308,6 +309,13 @@ $mt-s: 1.75rem;
     }
     .inner {
       width: 100%;
+    }
+    .heading {
+      font-size: 0.75rem;
+    }
+    .filled ~ .heading,
+    input:focus ~ .heading {
+      font-size: 0.65rem;
     }
     .c-n-i-n {
       width: 100%;
